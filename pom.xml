@@ -6,9 +6,9 @@
     <name>ALA Common UI</name>
     <description>ALA Common UI components</description>
 
-<!-- AN SCM entry that points to the SVN directory that contains the pom file for the project  -->
+<!-- AN SCM entry that points to the git repo that contains the pom file for the project  -->
     <scm>
-        <developerConnection>scm:svn:https://ala-bie.googlecode.com/svn/trunk/ala-common-ui/</developerConnection>
+        <developerConnection>scm:git:https://github.com/AtlasOfLivingAustralia/ala-common-ui.git</developerConnection>
     </scm>
 
     <dependencies>
@@ -43,13 +43,18 @@
     </dependencies>
 
     <distributionManagement>
-      <repository>
-        <id>ala-repository</id>
-        <uniqueVersion>false</uniqueVersion>
-        <url>scp://maven.ala.org.au/data/maven</url>
-      </repository>
+        <repository>
+            <id>ala-repo</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.ala.org.au/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>ala-repo</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.ala.org.au/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
-    
+
     <build>
         <plugins>
             <plugin>
